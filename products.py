@@ -20,5 +20,7 @@ print('您共支付', sum, '元')
 # 'abc' + '123' = 'abc123' (字串合併)
 # 'abc' * 3 = 'abcabcabc'
 with open('products.csv', 'w') as f:
+#with open('products.csv', 'w', encoding = 'utf-8') as f:
+	f.write('商品名稱, 商品價格, 商品數量, 總支出, \n')
 	for p in products:
 		f.write(p[0] + ',' + str(p[1]) + ',' + str(p[2])+ ','+ str(p[3])+ '\n')
