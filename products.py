@@ -1,14 +1,19 @@
 #讀取檔案
+import os #開啟作業系統模組
 products=[]
-with open('products.csv', 'r') as f:
-#with open('products.csv', 'r', encoding = 'utf-8') as f:
-	for line in f:
-		if '商品名稱, 商品價格' in line:
-			continue
-		name, price, unit, total = line.strip().split(',')
-#		print(s)
-		products.append([name, price, unit, total])
-	print(products)
+if os.path.isfile('products.csv'): #用os模組功能檢查檔案是否在本資料夾(要跨資料夾需完整路徑)
+	print('找到檔案了')
+	with open('products.csv', 'r') as f:
+	#with open('products.csv', 'r', encoding = 'utf-8') as f:
+		for line in f:
+			if '商品名稱, 商品價格' in line:
+				continue
+			name, price, unit, total = line.strip().split(',')
+	#		print(s)
+			products.append([name, price, unit, total])
+		print(products)
+else:
+	print('目前檔案不存在...')
 #讓使用者輸入
 while True:
 	name = input('請輸入商品名稱:(輸完請按"q"離開)')
