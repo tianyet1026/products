@@ -55,5 +55,5 @@ def main():
 		print_products(products)
 		write_file('products.csv', products)
 	else:
-			print('目前檔案不存在...')
+		print('目前檔案不存在...')
 main()
